@@ -1,0 +1,15 @@
+#Pseudocode, notes, and variables listed
+
+Program will use host's NIC/Network connection to run testing.  The program will test:
+IP connectivity using ping to well known web addresses (ex. 8.8.8.8, OR 4.4.2.2)
+IP connectivity using ping to default gateway
+IP connectivity using ping to well known DNS addresses; ex. google.com (optional / advanced functionality)
+DNS resolution to well known DNS addresses; ex. google.com (optional / advanced functionality)
+ARP resolution to local network (optional / advanced functionality)
+
+
+Variables:  
+Ping test intervals (default 1 test/20seconds)
+Number of probes (default 4)
+Ping test IPs (default 8.8.8.8)
+
