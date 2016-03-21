@@ -3,13 +3,32 @@
 Program will use host's NIC/Network connection to run testing.  The program will test:
 IP connectivity using ping to well known web addresses (ex. 8.8.8.8, OR 4.4.2.2)
 IP connectivity using ping to default gateway
-IP connectivity using ping to well known DNS addresses; ex. google.com (optional / advanced functionality)
-DNS resolution to well known DNS addresses; ex. google.com (optional / advanced functionality)
-ARP resolution to local network (optional / advanced functionality)
+IP connectivity using ping to well known DNS addresses; ex. google.com (optional / functionality reserved for later versions)
+ARP resolution to local network (optional / functionality reserved for later versions)
 
+If IP connectivity to web addresses fail; 
+  check the results of IP connectivity to secondary web address
+    if primary web address fails test but secondary succeeds
+      replace primary web address with secondary for repeated tests
+    else if both primary and secondary we addresses fail
+      compare to results of connectivity to default gateway
+        if web fails and gateway succeed
+          send user prompt that internet access is down
+        else if both web and gateway tests fail
+          test loopback
+            if loopback succeeds
+              prompt user that local network is down
+            else if local network and loopback fail
+              prompt user that host's connectivity is faulty and to restart host
 
 Variables:  
 Ping test intervals (default 1 test/20seconds)
 Number of probes (default 4)
-Ping test IPs (default 8.8.8.8)
+Ping test IPs (default 8.8.8.8 primary, 4.4.2.2 secondary)
+Default gateway 
 
+Python Modules:
+sys, os
+
+Python Commands:
+os.system('ping address')
