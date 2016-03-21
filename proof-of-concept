@@ -1,0 +1,22 @@
+#Import relevant modules; os and sys for using command line pings
+import sys, os
+
+#test to a known good IP address
+x = system.os('ping 127.0.0.1 -n 1')
+
+if x == 0:
+  print('Test to 127.0.0.1 was successful') 
+elif x != 0:
+  print('Test to 127.0.0.1 was unsuccessful')
+else:
+  return 'Default'
+
+#test to a known bad IP address
+y = system.os('ping 0.0.0.1 -n 1')
+
+if y == 0:
+  print('Test to 0.0.0.1 was successful') 
+elif y != 0:
+  print('Test to 0.0.0.1 was unsuccessful')
+else:
+  return 'Default'
