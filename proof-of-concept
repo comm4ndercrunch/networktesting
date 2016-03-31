@@ -2,7 +2,7 @@
 import sys, os
 
 #test to a known good IP address
-x = system.os('ping 127.0.0.1 -n 1')
+x = os.system('ping 127.0.0.1 -n 1')
 
 if x == 0:
   print('Test to 127.0.0.1 was successful') 
@@ -12,7 +12,7 @@ else:
   return 'Default'
 
 #test to a known bad IP address
-y = system.os('ping 0.0.0.1 -n 1')
+y = os.system('ping 0.0.0.1 -n 1')
 
 if y == 0:
   print('Test to 0.0.0.1 was successful') 
